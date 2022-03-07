@@ -11,7 +11,8 @@
 import {
   GET_COUNTER,
   INCREMENT_COUNTER,
-  RESET_COUNTER
+  RESET_COUNTER,
+  COUNTER
 } from '@/store/mutations-types'
 import { mapGetters, mapMutations } from 'vuex'
 export default {
@@ -22,13 +23,13 @@ export default {
     }
   },
   methods: {
-    ...mapMutations({ INCREMENT_COUNTER, RESET_COUNTER }),
+    ...mapMutations({ INCREMENT_COUNTER: `${COUNTER}${INCREMENT_COUNTER}`, RESET_COUNTER: `${COUNTER}${RESET_COUNTER}` })
   },
   computed: {
-    ...mapGetters({ counter: GET_COUNTER })
+    ...mapGetters({ counter: `${COUNTER}${GET_COUNTER}` })
   }
 }
-</script>
+</script>\
 
 <style>
 </style>
