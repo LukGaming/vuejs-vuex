@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     Teste
-    <button @click="incrementCounter">Incremento</button>
-    <button @click="resetCounter">Reset</button>
+    <button @click="INCREMENT_COUNTER">Incremento</button>
+    <button @click="RESET_COUNTER">Reset</button>
     <div>{{ counter }}</div>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations({ incrementCounter: INCREMENT_COUNTER, resetCounter: RESET_COUNTER }),
+    ...mapMutations({ INCREMENT_COUNTER, RESET_COUNTER }),
   },
   computed: {
     ...mapGetters({ counter: GET_COUNTER })
